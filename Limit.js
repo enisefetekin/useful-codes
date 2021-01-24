@@ -18,11 +18,9 @@ if(limitnumber == 0) limitnumber = "No Limit"
 message.reply(`Your user limit is set to **${limitnumber}**`)
 }
 
-
+// You have to adjust this part according to your own infrastructure.
 module.exports.settings = {
-    Commands: ["limit", "lim", "vlimit"],
+    Aliases: ["limit", "lim", "vlimit"],
     Usage: "limit <limitnumber>",
     Description: "Limit",
-    Category: "Useable",
-    Activity: true
-}
+} 
