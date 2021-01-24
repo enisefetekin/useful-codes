@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js')
-const LimitJson = require("../limit.json"); // We need to specify the location of the json file from which we will get the information.
+const LimitJson = require("../Limit.json"); // We need to specify the location of the json file from which we will get the information.
 
 const Settings = LimitJson.PrivateRoom; // We will set the name of the sub-category where we will pull the information.
 
