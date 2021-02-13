@@ -3,8 +3,9 @@ const qdb = require("quick.db");
 const db = new qdb.table("filterayarlar");
 
 module.exports = async (message) => {
-    let filteredword = await db.get("filterayar.filteredword");
-    if (message.content.includes(`${filteredword}`)) {
+	let filterayar = await db.get("filterayar");
+    let word = filterayar.filteredword;
+    if (word.some(word => message.content.includes(word))) {
         message.channel.send(`Mesajında Filtrelenmiş İçerik Bulundu!`)
         message.delete();
     };
