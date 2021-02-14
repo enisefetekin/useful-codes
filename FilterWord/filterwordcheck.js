@@ -3,12 +3,12 @@ const qdb = require("quick.db");
 const db = new qdb.table("filterayarlar");
 
 module.exports = async (message) => {
-	let filterayar = await db.get(`filterayar.${message.guild.id}`);
+    let filterayar = await db.get(`filterayar.${message.guild.id}`);
     let word = filterayar.filteredword;
-    let embed = new MessageEmbed().setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setFooter("Cod").setTimestamp();
-    if (word.some(word => message.content.includes(word))) {
-        message.channel.send(embed.setDescription("Mesajınızda **Filtrelenmiş** Sözcükler Bulundu Lütfen Kullanmayınız!"));
-        message.delete({timeout:1});
+    let embed = new MessageEmbed().setAuthor(message.member.displayName, message.author.avatarURL({dynamic: true})).setFooter("Coded By Enis").setTimestamp();
+    if (db.get(`filterayar.${message.guild.id}`) && word.some(word => message.content.includes(word))) {
+        message.delete({timeout:100});
+        message.channel.send(embed.setDescription("Mesajında  **Filtrelenmiş** Sözcük Bulundu!")).then(x => x.delete({timeout: 5000}));
     };
 }
 
