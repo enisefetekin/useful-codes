@@ -10,7 +10,7 @@ module.exports.execute = async (client, message, args) => {
     { name: "filteredword", type: "cogul"},
   ];
   let secim = args[0];
-  const embed = new MessageEmbed().setColor(client.randomColor()).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setFooter("Enis");
+  const embed = new MessageEmbed().setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true })).setFooter("Enis");
   if (secim == "liste") {
     let data = await db.get(`filterayar.${message.guild.id}`);
     let ozelliklerListe = Object.keys(data || {}).filter(a => ozellikler.find(v => v.name == a)).map(o => {
