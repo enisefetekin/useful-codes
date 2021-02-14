@@ -39,5 +39,5 @@ module.exports.configuration = {
     name: "filterpanel",
     aliases: ["filtrepanel", "filtrepaneli"],
     usage: "filterpanel [filteredword] [kelime]",
-    description: "Sunucu ayarları."
+    description: "Server Settings"
 };
